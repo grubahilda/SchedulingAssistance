@@ -1,5 +1,3 @@
-using System;
-
 namespace SchedulingAssistance.Models
 {
     public class ErrorViewModel
