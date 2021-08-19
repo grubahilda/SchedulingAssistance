@@ -4,11 +4,17 @@
         @if (User.IsInRole(GetRolesHelper.Admin))
         {
             <div class="form-group row col-2" id="divDoctorList">
-                <label>Select Doctor</label>
+                <label>Select a doctor</label>
                 @Html.DropDownList("doctorId",
-                    new SelectList(ViewBag.DoctorsList, "Id", "Name", new {@class="form-control select"}))
+                    new SelectList(ViewBag.DoctorsList, "Id", "Name"),
+                    new {@class="form-control select2"})
             </div>
         }
+        <div id="calendar">
+
+        </div>
     </div>
 
 </div>
+
+<partial name="_AddEditAppointment" />

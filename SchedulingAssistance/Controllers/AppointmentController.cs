@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using SchedulingAssistance.Helpers;
 using SchedulingAssistance.Services;
 
 namespace SchedulingAssistance.Controllers
@@ -15,6 +16,9 @@ namespace SchedulingAssistance.Controllers
         public IActionResult Index()
         {
             ViewBag.DoctorsList = _appointmentService.GetDoctorList();
+            ViewBag.PatientsList = _appointmentService.GetPatientList();
+            ViewBag.Duration = GetTimeHelper.GetTimeDropDown();
+
             return View();
         }
     }
