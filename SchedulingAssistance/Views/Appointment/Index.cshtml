@@ -1,0 +1,14 @@
+﻿@using SchedulingAssistance.Helpers
+<div class="row">
+    <div class="container">
+        @if (User.IsInRole(GetRolesHelper.Admin))
+        {
+            <div class="form-group row col-2" id="divDoctorList">
+                <label>Select Doctor</label>
+                @Html.DropDownList("doctorId",
+                    new SelectList(ViewBag.DoctorsList, "Id", "Name", new {@class="form-control select"}))
+            </div>
+        }
+    </div>
+
+</div>
